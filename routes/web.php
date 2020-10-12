@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes6tyu
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
