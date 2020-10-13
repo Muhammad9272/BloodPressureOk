@@ -88,15 +88,15 @@
     color: black !important;
 }
 .navigation-cus-1{
-background: #f2ceae !important;
+background: #fee5e0 !important;
     } 
 .container-pad{
     padding-left: 14%;
     padding-right: 14%;
 }
-.pad-t-10{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.pad-t-13{
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 .press-cal{
  width: 100%; display: inline-flex;height: 420px

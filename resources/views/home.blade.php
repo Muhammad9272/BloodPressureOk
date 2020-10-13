@@ -27,7 +27,7 @@
   <body>
     <header class="header header--standard header--autopart" data-sticky="true" >
       <nav class="navigation navigation-cus-1">
-        <div class="container container-pad  pad-t-10">
+        <div class="container container-pad  pad-t-13">
           <div class="navigation__left">
                         <ul class="menu menu--furniture">
                           <li class="current-menu-item "><a href="homepage-2.html">Home</a>
@@ -54,7 +54,7 @@
           </div>
           <div class="navigation__right">
             <ul class="navigation__extra">
-              <li><a href="#"><img src="{{asset('assets/front/img/logo-BP.jpg')}}"></a></li>
+              <li><a href="#"><img src="{{asset('assets/front/img/Blogo.png')}}"></a></li>
 
             </ul>
           </div>
