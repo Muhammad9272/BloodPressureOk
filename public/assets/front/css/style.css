@@ -958,7 +958,7 @@ a {
 }
 
 a:hover {
-  color: #fcb800;
+  color: red;
 }
 
 a,
@@ -7405,7 +7405,7 @@ textarea.form-control {
 }
 
 .widget--blog.widget--recent-comments p a:hover {
-  color: #fcb800;
+  color: red;
 }
 
 .widget--blog.widget--tags a {

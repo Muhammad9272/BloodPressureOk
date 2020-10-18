@@ -1,0 +1,37 @@
+.gocover {
+    display:none;
+    position: absolute;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+.d-inline-flex{
+	display: inline-flex;
+}
+.nicEdit-main {
+    min-height: 200px !important;
+  }  
+.page-content-wrapper .page-content{
+        padding: 0px 0 0 20px !important;
+}
+.page-header.navbar .page-logo .logo-default{
+    margin: 15px 0 0 !important;
+}
+.page-header.navbar {
+    background: #223848 !important;
+}
+.form-control{
+    border-radius: 0px !important;
+    font-size: 16px  !important;
+    margin-bottom: 15px  !important;
+    border: 0px  !important;
+    border-bottom: 1px solid rgba(45, 50, 116, 0.3)  !important;
+}
+.form-control:focus{
+    border-bottom:1px solid black  !important;
+   
+}

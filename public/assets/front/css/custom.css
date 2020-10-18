@@ -1,3 +1,32 @@
+/*Faq page css*/
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    background: #f4f4f4;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-title a {
+    display: block;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: black;
+}
+.accordion-section .panel-default .panel-title a:after {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-size: 3rem;
+    content: "\f106";
+    color: black;
+    float: right;
+    margin-top: -12px;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "\f107";
+}
+.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
+}
+/*End Faq page css*/
+
 /*custom*/
 .form-control-cus{
     outline: none;
@@ -88,11 +117,11 @@
     color: black !important;
 }
 .navigation-cus-1{
-background: #fee5e0 !important;
+background: #d9d9d9 !important;
     } 
 .container-pad{
-    padding-left: 14%;
-    padding-right: 14%;
+    padding-left: 13%;
+    padding-right: 13%;
 }
 .pad-t-13{
     padding-top: 13px;
@@ -148,6 +177,48 @@ max-width: 80%;
 max-width: 20%;
 }
 
+
+
+.press-cal-iner1{
+    background: #feefcf;width: 100%
+}
+.press-cal-iner1 .content{
+    padding: 10% 6%;
+}
+.press-cal-iner1 .content p{
+  font-size: 17px;  font-weight: 500;  color: black;  
+}
+.press-cal-form1{
+  padding: 6% 0% 0px 0%;  
+}
+.ps-blog--sidebar .ps-blog__right {
+    max-width: 322px  !important;
+    min-width: 322px !important;
+  }
+
+.ps-blog--sidebar .ps-blog__left {
+    padding-right: 1px !important;
+}
+.pad-lr-20{
+  padding: 0 20px;
+}
+.widget--blog.widget--recent-comments p a{
+  font-weight: 500;
+}
+
+.widget__title-cus{
+margin-bottom: 12px !important;line-height: 5px !important;
+}
+
+.blue_bordr{
+  border-bottom: 1px solid #4eb6f5;margin-bottom: 25px
+}
+.ps-banner__content{
+  top: 60% !important;
+}
+.slide-two{
+  margin-left: 19%
+}
 
 @media (max-width: 1680px) {
 .ps-banner__content {

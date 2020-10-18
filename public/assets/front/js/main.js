@@ -23,6 +23,9 @@
         }
     }
 
+    function bloodcheck() {
+       alert($('.Dystole').value); 
+    }
     function parallax() {
         $('.bg--parallax').each(function() {
             var el = $(this),
