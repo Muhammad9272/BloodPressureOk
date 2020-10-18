@@ -120,6 +120,9 @@ Route::prefix('admin')->group(function() {
   Route::post('/banner/edit/{slug}', 'Admin\BannerController@update')->name('admin-banner-update');
 
 
+  Route::get('/seotools/keywords', 'Admin\AdminController@keywords')->name('admin-seotool-keywords');
+  Route::post('/seotools/keywords/update', 'Admin\AdminController@keywordsupdate')->name('admin-seotool-keywords-update');
+
     Route::get('/cache/clear', function() {
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
@@ -148,7 +151,7 @@ Route::get('/treatments/', 'Front\FrontendController@Treatmentid')->name('front.
 Route::get('/treatments/{slug}', 'Front\FrontendController@Treatment')->name('front.treatment');
 
 Route::get('/article/{slug}', 'Front\FrontendController@Article')->name('front.article');
-
-Route::get('/{slug}', 'Front\FrontendController@page')->name('front.page');
 Route::get('/faq', 'Front\FrontendController@faq')->name('front.faq');
 Route::get('/readings/', 'Front\FrontendController@calculationCheck')->name('front.readings');
+Route::get('/{slug}', 'Front\FrontendController@page')->name('front.page');
+

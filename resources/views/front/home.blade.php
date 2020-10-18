@@ -56,10 +56,16 @@
                 </div>
             </div>
             <div class="press-cal-bot">
-              <p >
-                Vestibulum fringilla pede sit amet augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus ullamcorper ipsum rutrum nunc.
-              </p>
-              <p >Vestibulum fringilla pede sit amet augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus ullamcorper ipsum rutrum nunc. Phasellus accumsan cursus velit. Cras varius.Fusce egestas elit eget lorem. Suspendisse eu ligula. Nullam quis ante. Nulla facilisi.
+              <p style="font-weight: 500;">
+              The Upper Value is systolic blood pressure, which shows the pressure in the arteries when the
+              heart contracts and pushes blood into the arteries, it depends on the strength of the heart
+              contraction, the resistance that the walls of blood vessels exert, and the number of contractions
+              per unit time
+              <p style="font-weight: 500;">The Lower Value, diastolic blood pressure, shows the pressure in the arteries when the heart
+              muscle relaxes. This is the minimum pressure in the arteries,it is the resistance to.the resistance
+              of the peripheral vessels. As the blood moves along the vascular bed, the amplitude of
+              fluctuations in blood pressure decreases, venous and capillary pressure little depends on the
+              phase of the cardiac cycle.<p>
               </p>
 
             </div>
@@ -93,7 +99,10 @@
       <div class="container container-pad lat-art" >
           <h4 >The Latest Articles</h4>
           <p class="lat-art-p">
-            Nam adipiscing. Duis lobortis massa imperdiet quam. Nullam cursus lacinia erat.Praesent adipiscing. Aliquam eu nunc. Sed a libero.
+            We all know what blood pressure is, but not
+            many of us understand how it should be
+            normal. You will learn more useful information
+            from our articles
           </p>
 
           <div class="ps-section__content" style="padding: 8px;">

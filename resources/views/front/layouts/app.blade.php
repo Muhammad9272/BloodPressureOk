@@ -7,9 +7,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>Martfury - Multi Vendor &amp; Marketplace</title>
+    <meta name="keywords" content="{{ $gs->meta_keys }}">
+    <meta name="description" content="BloodPressure Calculator">
+
+    <title>BloodPressure Calculator</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/front/plugins/font-awesome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/front/fonts/Linearicons/Linearicons/Font/demo-files/demo.css')}}">
@@ -529,13 +530,15 @@
    $(document).on('submit','#calculationform',function(e){
       // e.preventDefault();
       var admin_loader=0;
-      var systole=$('.systole').val();
-      var diastole=$('.diastole').val();
-      if(systole<diastole){
+      var systole=Number($('.systole').val());
+      var diastole=Number($('.diastole').val());
+
+     
+      if(systole <= diastole){
         alert("Your lower value (diastole) can not be higher than your upper value (systole). Please check your readings.");
         return false;
       }
-      else if(systole>300 || systole<50){
+       if(systole>300 || systole<50){
         alert("The values given do not seem to be valid. Your systole cannot be higher than 300 or lower than 50. Your diastole cannot be higher than 200 or lower than 40. Please check your readings.");
         return false;
       }

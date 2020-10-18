@@ -17,6 +17,8 @@
                 {!! $data->desc !!}
                 <br><br>
                 @endforeach
+            @elseif($token==5)
+            <h2 style="font-weight: 600">Data Not Found  </h2>
             @else
             {!! $datas->desc !!}
             @endif

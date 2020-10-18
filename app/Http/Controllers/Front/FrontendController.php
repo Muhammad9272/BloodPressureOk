@@ -111,7 +111,7 @@ class FrontendController extends Controller
     {
 
     	$datas = PgFaq::orderBy('id','desc')->where('status',1)->get();       
-    	return view('front.faq',compact('datas','sb1','sb2','classifications','articles','remedies'));
+    	return view('front.faq',compact('datas'));
     }
 
         public function calculationCheck(Request $request)
@@ -127,10 +127,16 @@ class FrontendController extends Controller
              where('upper1','<=',$systole)->where('upper2','>=',$systole)
              ->where('lower1','<=',$diastole)->where('lower2','>=',$diastole)
              ->first();
+        if($data) {   
         $result = preg_replace("/{upper_val}/", $systole,$data->desc);
         $result = preg_replace("/{lower_val}/", $diastole ,$result);
 
         $token=1;
-        return view('front.page',compact('datas','result','token','sb1','sb2'));
+        return view('front.page',compact('datas','result','token'));
+        }
+        else{
+          $token=5;
+        return view('front.page',compact('token'));
+        }
     }
 }

@@ -136,6 +136,13 @@
                     </li>
 
                 </ul>
+                <li class="nav-item start {{ (request()->is('admin/seotools/keywords*')) ? 'active' : '' }}">
+
+                    <a href="{{route('admin-seotool-keywords')}}" >
+                        <i class=" icon-wrench"></i>
+                        <span class="title">Seo Tools</span>                    
+                    </a>
+                </li>
                 <li class="nav-item start">
 
                     <a href="{{route('admin-cache-clear')}}" >

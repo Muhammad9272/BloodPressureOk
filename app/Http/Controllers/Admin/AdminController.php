@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use Auth;
 use App\Http\Controllers\Controller;
+use App\Models\Generalsetting;
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use InvalidArgumentException;
 use Validator;
-use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -86,5 +87,24 @@ class AdminController extends Controller
         return response()->json($msg);
     }
     
+
+
+
+    public function keywords()
+    {
+        $tool = Generalsetting::find(1);
+        return view('admin.seotool.meta-keywords',compact('tool'));
+    }
+
+    public function keywordsupdate(Request $request)
+    {
+        $tool = Generalsetting::findOrFail(1);
+        $tool->meta_keys=$request->meta_keys;
+        $tool->update();
+        $msg = 'Data Updated Successfully.';
+        return response()->json($msg);  
+    }
+
+
 
 }
