@@ -28,35 +28,35 @@
 
             <aside class="widget widget--blog widget--categories">              
               <div class="widget__content">
-	            <div class="">
-	                <div class="" >
-	                  <img height="100%" src="{{asset('assets/front/homepage/2gg.jpg')}}">
-	                </div>
-	                <div class="press-cal-iner1" >
-	                  <div class="content" >
-	                    <p >Blood Pressure is one of the most important perameters characterizing the work of the circulatory system</p>
-	                      <form id="calculationform" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal">
-                
-	                      <div class="press-cal-form1">
-	                        <div class="form-group row">
-	                          <label  class="col-sm-8 col-form-label label-cus">Systole (Upper value):</label>
-	                          <div class="col-sm-4">
-	                            <input type="number" name="systole"  class="form-control-cus systole" required="">
-	                          </div>
-	                        </div>
-	                        <div class="form-group row">
-	                          <label  class="col-sm-8 col-form-label label-cus">Diastole (Lower value):</label>
-	                          <div class="col-sm-4">
-	                            <input type="number"  name="diastole" class="form-control-cus diastole" required="">
-	                          </div>
-	                        </div>
-	                        <button class="ps-btn" id="calculation-btn" style="width: 100%;background: black">Check Now</button>
-	                      </div>
-	                    </form>
+  	            <div class="">
+  	                <div class="" >
+  	                  <img height="100%" src="{{asset('assets/front/homepage/2gg.jpg')}}">
+  	                </div>
+  	                <div class="press-cal-iner1" >
+  	                  <div class="content" >
+  	                    <p >Blood Pressure is one of the most important perameters characterizing the work of the circulatory system</p>
+  	                      <form id="" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal calculationform">
+                  
+  	                      <div class="press-cal-form1">
+  	                        <div class="form-group row">
+  	                          <label  class="col-8 col-sm-8 col-md-8  col-form-label label-cus">Systole (Upper value):</label>
+  	                          <div class="col-4 col-sm-4 col-md-4">
+  	                            <input type="number" name="systole"  class="form-control-cus systole" required="">
+  	                          </div>
+  	                        </div>
+  	                        <div class="form-group row">
+  	                          <label  class="col-8 col-sm-8 col-md-8  col-form-label label-cus">Diastole (Lower value):</label>
+  	                          <div class="col-4 col-sm-4 col-md-4">
+  	                            <input type="number"  name="diastole" class="form-control-cus diastole" required="">
+  	                          </div>
+  	                        </div>
+  	                        <button class="ps-btn" id="calculation-btn" style="width: 100%;background: black">Check Now</button>
+  	                      </div>
+  	                    </form>
 
-	                  </div>
-	                </div>
-	            </div>
+  	                  </div>
+  	                </div>
+  	            </div>
               </div>
             </aside>
            

@@ -132,7 +132,7 @@ class FrontendController extends Controller
         $result = preg_replace("/{lower_val}/", $diastole ,$result);
 
         $token=1;
-        return view('front.page',compact('datas','result','token'));
+        return view('front.page',compact('data','result','token'));
         }
         else{
           $token=5;

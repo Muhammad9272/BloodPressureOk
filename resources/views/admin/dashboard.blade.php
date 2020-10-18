@@ -37,6 +37,13 @@
 
                 <h4 class="block">Clearing cache ?</h4>
                  Clearing cache is a quick and easy way to free up space and (hopefully) fix a misbehaving app.
+                <h4 class="block">Menu Page Settings</h4>
+                <p>In menu page settings you can add pages against all menu links,if you create only one page against one menu link,drop down will not appear but when you create more than 1 pages against menu link then drop down will appear & titles of the pages will appear in the dropdown</p>
+                 <h4 class="block">What is Status  ?</h4>
+                 <p>
+                     If you change status to inactive.Then that particular info will not show in website 
+                 </p>
+
                 
             </div>
         </div>

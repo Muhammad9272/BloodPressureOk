@@ -3,7 +3,7 @@
 
     <div id="homepage-2">
       <div class="ps-home-banner">
-        <div class="ps-carousel--nav-inside owl-slider " data-owl-auto="true" data-owl-loop="{{$sliders->count()>1?'true':'false'}}" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="{{$sliders->count()>1?'true':'false'}}" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">  
+        <div class="ps-carousel--nav-inside owl-slider " data-owl-auto="true" data-owl-loop="{{$sliders->count()>1?'true':'false'}}" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="{{$sliders->count()>1?'true':'false'}}" data-owl-dots="{{$sliders->count()>1?'true':'false'}}" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">  
         @foreach($sliders as $data)        
           <div class="ps-banner--furniture ps-banner--furniture-mob" >
            <img class="slider-height" src="{{asset('assets/images/sliders/'.$data->photo)}}" alt="">
@@ -25,14 +25,50 @@
           </div>
           <div class="ps-section__content"></div>
           <div class="align-content-lg-stretch" >
-            <div class="press-cal">
+
+            <aside class="widget widget--blog widget--categories ps-blog__right-home" >              
+              <div class="widget__content">
+                <div class="">
+                    <div class="" >
+                      <img height="100%" src="{{asset('assets/front/homepage/2gg.jpg')}}">
+                    </div>
+                    <div class="press-cal-iner1" >
+                      <div class="content" >
+                        <p >Blood Pressure is one of the most important perameters characterizing the work of the circulatory system</p>
+                          <form id="" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal calculationform">
+                  
+                          <div class="press-cal-form1">
+                            <div class="form-group row">
+                              <label  class="col-6  col-md-8 col-form-label label-cus">Systole (Upper value):</label>
+                              <div class="col-4">
+                                <input type="number" name="systole"  class="form-control-cus systole" required="">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label  class="col-6  col-md-8 col-form-label label-cus">Diastole (Lower value):</label>
+                              <div class="col-4">
+                                <input type="number"  name="diastole" class="form-control-cus diastole" required="">
+                              </div>
+                            </div>
+                            <button class="ps-btn calculation-btn" id="" style="width: 100%;background: black">Check Now</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </aside>
+
+
+            <div class="press-cal ps-blog__right-home-lap">
                 <div class="press-cal-img" >
                   <img height="100%" src="{{asset('assets/front/homepage/home2.png')}}">
                 </div>
                 <div class="press-cal-iner" >
                   <div class="content" >
                     <p >Blood Pressure is one of the most important perameters characterizing the work of the circulatory system</p>
-                    <form id="calculationform" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal">
+                    <form id="" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal calculationform">
                 
                       
                       <div class="press-cal-form">
@@ -48,7 +84,7 @@
                             <input type="number" name="diastole" class="form-control-cus diastole" required="">
                           </div>
                         </div>
-                        <button class="ps-btn cal-btn " id="calculation-btn"  style="width: 100%;background: black">Check Now</button>
+                        <button class="ps-btn cal-btn calculation-btn"   style="width: 100%;background: black">Check Now</button>
                       </div>
                     </form>
 
@@ -73,6 +109,8 @@
           </div>
         </div>
       </div>
+
+
       @if($top_banner->status==1)
       <div class="ps-promotion ps-promotion--2">
         <div class=""><a class="ps-collection" href="{{$top_banner->link}}"><img  src="{{asset('assets/images/banners/'.$top_banner->photo)}}" alt=""></a></div>
@@ -107,7 +145,7 @@
 
           <div class="ps-section__content" style="padding: 8px;">
             <div class="row">
-              <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="3" data-owl-item-xs="2" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on">
+              <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="3" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="2" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on">
                 @foreach($articles as $data)
                 <div class="pad-10" >
                   <div class="ps-post">

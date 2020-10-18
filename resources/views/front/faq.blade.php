@@ -15,16 +15,16 @@
     				  
     					  <h2 style="font-weight: 600">Frequently Asked Questions </h2>
     					  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    					  	@foreach($datas as $data)
+    					  	@foreach($datas as $key=>$data)
     						<div class="panel panel-default">
-    						  <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
+    						  <div class="panel-heading p-3 mb-3" role="tab" id="heading{{$key}}">
     							<h3 class="panel-title">
-    							  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
+    							  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse0">
     								{{$data->title}}
     							  </a>
     							</h3>
     						  </div>
-    						  <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+    						  <div id="collapse{{$key}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$key}}">
     							<div class="panel-body px-3 mb-4">
     							 {!! $data->desc !!}
     							</div>
@@ -48,18 +48,18 @@
 	                <div class="press-cal-iner1" >
 	                  <div class="content" >
 	                    <p >Blood Pressure is one of the most important perameters characterizing the work of the circulatory system</p>
-	                      <form id="calculationform" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal">
+	                      <form id="" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal calculationform">
                 
 	                      <div class="press-cal-form1">
 	                        <div class="form-group row">
-	                          <label  class="col-sm-8 col-form-label label-cus">Systole (Upper value):</label>
-	                          <div class="col-sm-4">
+	                          <label  class="col-8 col-sm-8 col-md-8 col-form-label label-cus">Systole (Upper value):</label>
+	                          <div class="col-4 col-sm-4 col-md-4">
 	                            <input type="number"  name="systole"  class="form-control-cus systole" required="" >
 	                          </div>
 	                        </div>
 	                        <div class="form-group row">
-	                          <label  class="col-sm-8 col-form-label label-cus">Dystole (Lower value):</label>
-	                          <div class="col-sm-4">
+	                          <label  class="col-8 col-sm-8 col-md-8 col-form-label label-cus">Dystole (Lower value):</label>
+	                          <div class="col-4 col-sm-4 col-md-4">
 	                            <input type="number" name="diastole" class="form-control-cus diastole" required="">
 	                          </div>
 	                        </div>
