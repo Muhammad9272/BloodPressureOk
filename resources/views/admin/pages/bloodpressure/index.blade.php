@@ -11,8 +11,24 @@
                             <div class="portlet light bordered">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="fa fa-list"></i>
-                                        <span class="caption-subject sbold uppercase">Menu Page(Blood Pressure)   </span>
+                                        <i style="margin-top: 9px" class="fa fa-list"></i>
+                                        <span  class="caption-subject sbold uppercase">Menu Page(Blood Pressure)   </span>
+
+                                        <span>
+                                            
+                                                <span class="caption-subject  sbold uppercase">&nbsp;&nbsp;(Display link in menu)</span>
+                                                <form method="post" id="pg-status-sub" action="{{route('admin-pgblood-status')}}" style="display: -webkit-inline-box">
+                                                @csrf
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-default {{$gs->is_pgblood==1?'active':'' }}">
+                                                        <input type="radio" name="status" value="1" class="toggle pg-status">Active</label>
+                                                    <label class="btn btn-default {{$gs->is_pgblood==0?'active':'' }}">
+                                                        <input type="radio" name="status" value="0" class="toggle pg-status">Inactive</label>
+                                                
+                                                </div>
+                                              </form>
+                                        </span>
+
                                     </div>
                                     <div class="actions">
 
@@ -66,4 +82,13 @@
                     </div>
     </div>
     <!-- END CONTENT BODY -->
+@endsection
+@section('pagelevel_scripts')
+<script type="text/javascript">
+      $(document).ready(function() {
+   $(".pg-status").on( "change", function() {
+     $('#pg-status-sub').submit();
+   })
+});
+</script>
 @endsection

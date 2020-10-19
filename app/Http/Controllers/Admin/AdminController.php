@@ -56,6 +56,50 @@ class AdminController extends Controller
         $msg = 'Successfully updated your profile';
         return response()->json($msg);
     }
+    public function gsedit()
+    {
+        // $data = Generalsetting::find(1);
+        return view('admin.generalsettings');
+    }
+
+    public function gsupdate(Request $request)
+    {
+        //--- Validation Section
+
+        $rules =
+        [
+            'favicon' => 'mimes:jpeg,jpg,png,svg',
+            
+        ];
+
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
+        }
+        //--- Validation Section Ends
+        $input = $request->all();
+        $data = Generalsetting::find(1);
+            if ($file = $request->file('favicon'))
+            {
+                $name = time().$file->getClientOriginalName();
+                $file->move('assets/images/',$name);
+                if($data->favicon != null)
+                {
+                    if (file_exists(public_path().'/assets/images/'.$data->favicon)) {
+                        unlink(public_path().'/assets/images/'.$data->favicon);
+                    }
+                }
+            $data->favicon = $name;
+            }
+         $data->title=$request->title;   
+         $data->to_email=$request->email;   
+
+        $data->update();
+        $msg = 'Successfully updated data';
+        return response()->json($msg);
+    }
 
     public function profile()
     {

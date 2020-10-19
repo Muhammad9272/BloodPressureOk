@@ -30,6 +30,10 @@ Route::prefix('admin')->group(function() {
 
   Route::get('/profile', 'Admin\AdminController@profile')->name('admin.profile');
   Route::post('/profile/update', 'Admin\AdminController@profileupdate')->name('admin.profile.update');
+
+Route::get('/generalsettings/edit', 'Admin\AdminController@gsedit')->name('admin.gs.edit');
+  Route::post('/generalsettings/update', 'Admin\AdminController@gsupdate')->name('admin-gs-update');
+
   Route::get('/password', 'Admin\AdminController@passwordreset')->name('admin.password');
   Route::post('/password/update', 'Admin\AdminController@changepass')->name('admin.password.update');
 
@@ -62,6 +66,7 @@ Route::prefix('admin')->group(function() {
   Route::get('/pgblood/edit/{id}', 'Admin\PgBloodController@edit')->name('admin-pgblood-edit');
   Route::post('/pgblood/edit/{id}', 'Admin\PgBloodController@update')->name('admin-pgblood-update');
   Route::get('/pgblood/delete/{id}', 'Admin\PgBloodController@destroy')->name('admin-pgblood-delete');
+  Route::post('/pgblood/status', 'Admin\PgBloodController@status')->name('admin-pgblood-status');
 
 
 
@@ -71,6 +76,7 @@ Route::prefix('admin')->group(function() {
   Route::get('/pgclassification/edit/{id}', 'Admin\PgClassificationController@edit')->name('admin-pgclass-edit');
   Route::post('/pgclassification/edit/{id}', 'Admin\PgClassificationController@update')->name('admin-pgclass-update');
   Route::get('/pgclassification/delete/{id}', 'Admin\PgClassificationController@destroy')->name('admin-pgclass-delete');
+  Route::post('/pgclassification/status', 'Admin\PgClassificationController@status')->name('admin-pgclass-status');
 
 
 
@@ -114,6 +120,7 @@ Route::prefix('admin')->group(function() {
   Route::get('/article/edit/{id}', 'Admin\ArticleController@edit')->name('admin-article-edit');
   Route::post('/article/edit/{id}', 'Admin\ArticleController@update')->name('admin-article-update');
   Route::get('/article/delete/{id}', 'Admin\ArticleController@destroy')->name('admin-article-delete');
+  Route::post('/article/status', 'Admin\ArticleController@status')->name('admin-article-status');
 
 
   Route::get('/banner/edit/{slug}', 'Admin\BannerController@edit')->name('admin-banner-edit');
@@ -150,8 +157,13 @@ Route::get('/remedies/{slug}', 'Front\FrontendController@Remedy')->name('front.r
 Route::get('/treatments/', 'Front\FrontendController@Treatmentid')->name('front.treatment.id');
 Route::get('/treatments/{slug}', 'Front\FrontendController@Treatment')->name('front.treatment');
 
-Route::get('/article/{slug}', 'Front\FrontendController@Article')->name('front.article');
+Route::get('/articles/', 'Front\FrontendController@Articleid')->name('front.article.id');
+
+Route::get('/articles/{slug}', 'Front\FrontendController@Article')->name('front.article');
 Route::get('/faq', 'Front\FrontendController@faq')->name('front.faq');
 Route::get('/readings/', 'Front\FrontendController@calculationCheck')->name('front.readings');
-Route::get('/{slug}', 'Front\FrontendController@page')->name('front.page');
+Route::get('/contact/', 'Front\FrontendController@Contact')->name('front.contact');
+Route::post('/contact','Front\FrontendController@contactemail')->name('front.contact.submit');
+
+Route::get('/{slug}/', 'Front\FrontendController@page')->name('front.page');
 

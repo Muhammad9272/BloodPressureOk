@@ -18,7 +18,7 @@
          
         </div>
       </div>
-      <div class="ps-top-categories" id="pointed-area">
+      <div class="ps-top-categories pointed-area" >
         <div class="container container-pad"  >
           <div class="ps-section__header">
             <h3>Blood Pressure Calculator</h3>
@@ -27,7 +27,7 @@
           <div class="align-content-lg-stretch" >
 
             <aside class="widget widget--blog widget--categories ps-blog__right-home" >              
-              <div class="widget__content">
+              <div class="widget__content" >
                 <div class="">
                     <div class="" >
                       <img height="100%" src="{{asset('assets/front/homepage/2gg.jpg')}}">
@@ -135,7 +135,7 @@
       @endif
 
       <div class="container container-pad lat-art" >
-          <h4 >The Latest Articles</h4>
+          <h4 ><a href="{{route('front.article.id')}}">The Latest Articles</a></h4>
           <p class="lat-art-p">
             We all know what blood pressure is, but not
             many of us understand how it should be
@@ -145,12 +145,12 @@
 
           <div class="ps-section__content" style="padding: 8px;">
             <div class="row">
-              <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="3" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="2" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on">
+              <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="true" data-owl-item="3" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="2" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on">
                 @foreach($articles as $data)
                 <div class="pad-10" >
                   <div class="ps-post">
-                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="{{asset('assets/images/articles/'.$data->photo)}}" alt=""></div>
-                    <div class="ps-post__content"><a class="ps-post__title" href="#">{{$data->title}}</a>
+                    <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="{{route('front.article',$data->slug)}}"></a><img src="{{asset('assets/images/articles/'.$data->photo)}}" alt=""></div>
+                    <div class="ps-post__content"><a class="ps-post__title" href="{{route('front.article',$data->slug)}}">{{$data->title}}</a>
                       <p>{{ $data->small_desc }}</p>
                     </div>
                   </div>

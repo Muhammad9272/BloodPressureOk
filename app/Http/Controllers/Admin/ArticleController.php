@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Generalsetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Validator;
@@ -146,5 +147,16 @@ class ArticleController extends Controller
         // return response()->json($msg);  
         return redirect()->route('admin-article-index')->with('status', 'Data Deleted Successfully!');     
         //--- Redirect Section Ends     
+    }
+
+        public function status(Request $request)
+    {
+        $gs = Generalsetting::find(1);
+        $gs->is_article=$request->status;
+        $gs->update();
+
+        return redirect()->route('admin-article-index')->with('status', 'Status Changed  Successfully!');
+
+        //If Photo Doesn't Exist
     }
 }

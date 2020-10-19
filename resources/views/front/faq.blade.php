@@ -37,7 +37,7 @@
     				  </div>
     				</section>
           </div>
-          <div class="ps-blog__right">
+          <div class="ps-blog__right pointed-area">
 
             <aside class="widget widget--blog widget--categories">              
               <div class="widget__content">

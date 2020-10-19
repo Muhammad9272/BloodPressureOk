@@ -136,6 +136,13 @@
                     </li>
 
                 </ul>
+                <li class="nav-item start {{ (request()->is('admin/generalsettings*')) ? 'active' : '' }}">
+
+                    <a href="{{route('admin.gs.edit')}}" >
+                        <i class="icon-social-dribbble"></i>
+                        <span class="title">General Settings</span>                    
+                    </a>
+                </li>
                 <li class="nav-item start {{ (request()->is('admin/seotools/keywords*')) ? 'active' : '' }}">
 
                     <a href="{{route('admin-seotool-keywords')}}" >

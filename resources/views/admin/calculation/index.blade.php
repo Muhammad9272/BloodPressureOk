@@ -24,6 +24,7 @@
                                          
                                     </div>
                                 </div>
+                                @include('includes.admin.form-both')
                                 <div class="portlet-body">
                                     <div class="table-scrollable">
                                         <table class="table table-hover table-light">
@@ -52,7 +53,12 @@
                                                     
 
                                                     <td><a href="{{route('admin-bcl-edit',$data->id)}}" class="btn btn-outline  btn-sm blue">
-                                                            <i class="fa fa-edit"></i> Edit </a></td>
+                                                            <i class="fa fa-edit"></i> Edit </a>
+                                                            <a href="{{route('admin-bcl-delete',$data->id)}}" class="btn btn-outline delete-data  btn-sm red" data-toggle="confirmation" data-placement="top" data-id="{{ $data->id }}" >
+                                                            <i class="fa fa-trash"></i> Delete </a>
+
+
+                                                        </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

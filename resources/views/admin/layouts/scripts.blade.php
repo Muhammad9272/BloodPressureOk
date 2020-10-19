@@ -65,6 +65,19 @@
         {
             $('#radio1003').attr('checked', 'checked');
         });
+
+        $(".seocheck").on( "change", function() {
+            if(this.checked){
+             $('#seofield').removeClass('seofields');
+            }
+            else{
+              $('#seofield').addClass('seofields');
+              
+            }
+
+          });
+
+
     })
 </script>
 

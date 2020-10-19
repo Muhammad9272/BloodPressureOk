@@ -50,7 +50,7 @@ class AppServiceProvider extends ServiceProvider
             $settings->with('treatments', DB::table('pg_treats')->where('status',1)->get());
             $settings->with('opages', DB::table('pg_others')->where('status',1)->get());
 
-            $settings->with('articles', DB::table('articles')->where('status',1)->get());
+            $settings->with('articles', DB::table('articles')->where('status',1)->take(6)->get());
 
         });
     }

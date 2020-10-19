@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Generalsetting;
 use App\Models\PgBlood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -135,5 +136,15 @@ class PgBloodController extends Controller
         // return response()->json($msg);   
         return redirect()->route('admin-pgblood-index')->with('status', 'Data Deleted Successfully!');    
         //--- Redirect Section Ends     
+    }
+    public function status(Request $request)
+    {
+        $gs = Generalsetting::find(1);
+        $gs->is_pgblood=$request->status;
+        $gs->update();
+
+        return redirect()->route('admin-pgblood-index')->with('status', 'Status Changed  Successfully!');
+
+        //If Photo Doesn't Exist
     }
 }

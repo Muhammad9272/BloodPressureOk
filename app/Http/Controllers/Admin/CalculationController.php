@@ -130,8 +130,7 @@ class CalculationController extends Controller
         // }
         $data->delete();
         //--- Redirect Section     
-        $msg = 'Data Deleted Successfully.';
-        return response()->json($msg);      
+        return redirect()->route('admin-bcl-index')->with('status', 'Data Deleted Successfully!');     
         //--- Redirect Section Ends     
     }
 }

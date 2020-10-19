@@ -52,7 +52,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" >Slug</label>
                         <div class="col-md-8 d-inline-flex">
-                            <input type="text" class="form-control"  name="slug" required="" value="{{$data->title}}">  
+                            <input type="text" class="form-control"  name="slug" required="" value="{{$data->slug}}">  
        
                         </div>                        
                     </div>
@@ -95,6 +95,41 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-9">
+                            <div class="mt-checkbox-inline">
+                                <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" class="seocheck" {{ ( 
+                                        $data->meta_title != null || $data->meta_tag != null || $data->meta_desc != null) ? 'checked':'' }} >{{ __('Allow Page SEO') }}
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="{{ ($data->meta_title == null && $data->meta_tag == null && $data->meta_description == null) ? "seofields":"" }}" id="seofield">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" >Meta Title</label>
+                            <div class="col-md-8 d-inline-flex">
+                                <input  type="text" class="form-control"  name="meta_title"  value="{{$data->meta_title}}" >  
+           
+                            </div>                        
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" >Meta tags</label>
+                            <div class="col-md-8 d-inline-flex">
+                                <input  type="text" class="form-control"  name="meta_tag" value="{{$data->meta_tag}}" >  
+           
+                            </div>                        
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" >Meta description</label>
+                            <div class="col-md-8 d-inline-flex">
+                                <input  type="text" class="form-control"  name="meta_desc" value="{{$data->meta_desc}}" >         
+                            </div>                        
+                        </div>
+                    </div>
 
 
                     <div class="form-group">

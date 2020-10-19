@@ -7,10 +7,23 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="">
-    <meta name="keywords" content="{{ $gs->meta_keys }}">
-    <meta name="description" content="BloodPressure Calculator">
 
-    <title>BloodPressure Calculator</title>
+
+       @if(isset($datta->meta_tag) && isset($datta->meta_desc) && isset($datta->meta_title) )
+        <meta name="keywords" content="{{ !empty($datta->meta_tag) ? $datta->meta_tag:  $gs->meta_keys}}">
+
+        <meta name="description" content="{{ $datta->meta_desc != null ? $datta->meta_desc : '' }}">
+        
+        <title>{{substr($datta->meta_title, 0,11)."-"}} {{$gs->title}}</title>
+      @else
+
+      <meta name="keywords" content="{{ $gs->meta_keys }}">
+      <meta name="description" content="BloodPressure Calculator">
+
+      <title>{{$gs->title}}</title>
+      @endif
+
+    <link rel="icon"  type="image/x-icon" href="{{asset('assets/images/'.$gs->favicon)}}"/>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/front/plugins/font-awesome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/front/fonts/Linearicons/Linearicons/Font/demo-files/demo.css')}}">
@@ -40,7 +53,7 @@
 
                           <li class="current-menu-item "><a href="{{url('/')}}">Home</a>
                           </li>
-
+                          @if($gs->is_pgblood==1)
                           <li class="current-menu-item {{(count($pgbloods)>1)?'menu-item-has-children':''}}">
                             
                             @if(count($pgbloods)>1)
@@ -62,7 +75,9 @@
                                         </ul>
                                         @endif
                           </li>
-
+                          @endif
+                         
+                         @if($gs->is_pgclass==1)
                           <li class="current-menu-item {{(count($classifications)>1)?'menu-item-has-children':''}}">
                             
                             @if(count($classifications)>1)
@@ -84,6 +99,13 @@
                                         </ul>
                                         @endif
                           </li>
+                         @endif
+                         
+                         @if($gs->is_article==1)
+                          <li class="current-menu-item "><a href="{{route('front.article.id')}}">Latest Articles</a>
+                          </li>
+                         @endif
+
 
                           <li class="current-menu-item {{(count($remedies)>1)?'menu-item-has-children':''}}">
                             
@@ -153,7 +175,7 @@
           </li>
 
 
-
+          @if($gs->is_pgblood==1)
           <li class="current-menu-item {{(count($pgbloods)>1)?'menu-item-has-children':''}}">
             
             @if(count($pgbloods)>1)
@@ -175,7 +197,8 @@
                         </ul>
                         @endif
           </li>
-
+          @endif
+          @if($gs->is_pgclass==1)
           <li class="current-menu-item {{(count($classifications)>1)?'menu-item-has-children':''}}">
             
             @if(count($classifications)>1)
@@ -197,7 +220,12 @@
                         </ul>
                         @endif
           </li>
+          @endif
 
+          @if($gs->is_article==1)
+          <li class="current-menu-item "><a href="{{route('front.article.id')}}">Latest Articles</a>
+          </li>
+          @endif
           <li class="current-menu-item {{(count($remedies)>1)?'menu-item-has-children':''}}">
             
             @if(count($remedies)>1)
@@ -263,10 +291,18 @@
                       <ul class="sub-menu menu-cus">
                         <li class="current-menu-item "><a href="{{url('/')}}">Home</a>
                         </li>
+                        @if($gs->is_pgblood==1)
                         <li class="current-menu-item "><a href="{{route('front.pgblood.id')}}">Blood Pressure</a>
                         </li>
+                        @endif
+                        @if($gs->is_pgclass==1)
                         <li class="current-menu-item "><a href="{{route('front.classification.id')}}">Classification</a>
                         </li>
+                        @endif
+                        @if($gs->is_article==1)
+                        <li class="current-menu-item "><a href="{{route('front.article.id')}}">Latest Articles</a>
+                        </li>
+                        @endif
                         <li class="current-menu-item "><a href="{{route('front.remedy.id')}}">Remedies</a>
                         </li>
                         <li class="current-menu-item "><a href="{{route('front.treatment.id')}}">Treatment</a>
@@ -277,6 +313,9 @@
                         @endforeach
                         <li class="current-menu-item "><a href="{{route('front.faq')}}">Faq</a>
                         </li>
+                        <li class="current-menu-item "><a href="{{route('front.contact')}}">Contact us</a>
+                        </li>
+
                       </ul>
                     </li>
                   </ul>
@@ -286,10 +325,19 @@
                 <ul class="menu-cus ps-panel__content-footerr">
                   <li class="current-menu-item "><a href="{{url('/')}}">Home</a>
                   </li>
+                   @if($gs->is_pgblood==1)
                   <li class="current-menu-item "><a href="{{route('front.pgblood.id')}}">Blood Pressure</a>
                   </li>
+                  @endif
+                   @if($gs->is_pgclass==1)
                   <li class="current-menu-item "><a href="{{route('front.classification.id')}}">Classification</a>
                   </li>
+                  @endif
+                   @if($gs->is_article==1)
+                   <li class="current-menu-item "><a href="{{route('front.article.id')}}">Latest Articles</a>
+                  </li>
+                  @endif
+
                   <li class="current-menu-item "><a href="{{route('front.remedy.id')}}">Remedies</a>
                   </li>
                   <li class="current-menu-item "><a href="{{route('front.treatment.id')}}">Treatment</a>
@@ -299,6 +347,8 @@
                   </li>
                   @endforeach
                   <li class="current-menu-item "><a href="{{route('front.faq')}}">Faq</a>
+                  </li>
+                  <li class="current-menu-item "><a href="{{route('front.contact')}}">Contact us</a>
                   </li>
                 </ul>              
             </nav>
@@ -349,12 +399,16 @@
 
      <script type="text/javascript">
  
-     $(".point-area").click(function() {
+     $(".point-area").click(function(e) {
+      e.preventDefault();
     $('html,body').animate({
-        scrollTop: $("#pointed-area").offset().top},
+        scrollTop: $(".pointed-area").offset().top},
         'slow');
 
    })
+
+
+
  </script>  
 
  <script type="text/javascript">

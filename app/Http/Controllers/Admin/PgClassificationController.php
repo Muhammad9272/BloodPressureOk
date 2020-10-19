@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Generalsetting;
 use App\Models\PgClassification;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Validator;
 
@@ -122,4 +123,15 @@ class PgClassificationController extends Controller
         return redirect()->route('admin-pgclass-index')->with('status', 'Data Deleted Successfully!');
         //--- Redirect Section Ends     
     }
+    public function status(Request $request)
+    {
+        $gs = Generalsetting::find(1);
+        $gs->is_pgclass=$request->status;
+        $gs->update();
+
+        return redirect()->route('admin-pgclass-index')->with('status', 'Status Changed  Successfully!');
+
+        //If Photo Doesn't Exist
+    }
+
 }

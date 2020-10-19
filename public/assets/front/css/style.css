@@ -2004,7 +2004,7 @@ button {
 .form-control:focus {
   outline: none;
   box-shadow: 0 0 0 #000;
-  border-color: #fcb800;
+  border-color: black;
 }
 
 textarea.form-control {
