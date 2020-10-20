@@ -8,13 +8,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="">
 
-
-       @if(isset($datta->meta_tag) && isset($datta->meta_desc) && isset($datta->meta_title) )
+       @if(isset($seo_check))
+        <meta name="keywords" content="{{ !empty($seo_tag) ? $seo_tag:  $gs->meta_keys}}">
+        <meta name="description" content="{{ $seo_desc != null ? $seo_desc : '' }}">
+        <title> {{$seo_title}}</title>
+       @elseif(isset($datta->meta_tag) && isset($datta->meta_desc) && isset($datta->meta_title) )
         <meta name="keywords" content="{{ !empty($datta->meta_tag) ? $datta->meta_tag:  $gs->meta_keys}}">
 
         <meta name="description" content="{{ $datta->meta_desc != null ? $datta->meta_desc : '' }}">
         
-        <title>{{substr($datta->meta_title, 0,11)."-"}} {{$gs->title}}</title>
+        <title> {{$datta->meta_title}} </title>
       @else
 
       <meta name="keywords" content="{{ $gs->meta_keys }}">
@@ -413,7 +416,7 @@
 
  <script type="text/javascript">
    $(document).on('submit','.calculationform',function(e){
-      // e.preventDefault();
+      e.preventDefault();
       var admin_loader=0;
       var systole=Number($(this).find('.systole').val());
       var diastole=Number($(this).find('.diastole').val());
@@ -431,11 +434,12 @@
 
       }
       else
-        $('#calculationform').submit();
+        // $('#calculationform').submit();
+      window.location = "{{url('/readings')}}/"+systole+"-over-"+diastole;
 
 });
 
  </script>
-
+{!! NoCaptcha::renderJs() !!}
   </body>
 </html>

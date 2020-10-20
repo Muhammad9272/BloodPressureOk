@@ -48,7 +48,7 @@
 	                <div class="press-cal-iner1" >
 	                  <div class="content" >
 	                    <p >Blood Pressure is one of the most important perameters characterizing the work of the circulatory system</p>
-	                      <form id="" action="{{route('front.readings')}}" method="get" enctype="multipart/form-data" class="form-horizontal calculationform">
+	                      <form id="" action="" method="get" enctype="multipart/form-data" class="form-horizontal calculationform">
                 
 	                      <div class="press-cal-form1">
 	                        <div class="form-group row">

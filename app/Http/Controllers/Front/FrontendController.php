@@ -17,6 +17,10 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Input;
+use InvalidArgumentException;
+use Validator;
+
 
 class FrontendController extends Controller
 {
@@ -151,6 +155,22 @@ class FrontendController extends Controller
         // Login Section
 
 
+        $rules =
+        [
+            'name' => 'required',
+            'email' => 'required',
+            // 'g-recaptcha-response' => 'required|captcha',
+            
+        ];
+
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
+        }
+
+
         $details = [
           'title' => 'Mail from BloodPressureCalculator.com',
           'subject' =>$request->subject ,
@@ -169,14 +189,18 @@ class FrontendController extends Controller
         return response()->json("Email Received.We will shortly reply you !");
     }
 
-        public function calculationCheck(Request $request)
+    public function calculationCheck($slug)
     { 
+         $pos1=strpos($slug,'-o');
+         $pos2=strpos($slug,'r-');
+         $pos2+=2;
+
+         $systole=(int)substr($slug,0,$pos1);
+
+         $diastole=(int)substr($slug,$pos2);
 
 
 
-
-       $systole=$request->systole;
-       $diastole=$request->diastole;
  
         $datta= Calculation::
              where('upper1','<=',$systole)->where('upper2','>=',$systole)
@@ -186,8 +210,21 @@ class FrontendController extends Controller
         $result = preg_replace("/{upper_val}/", $systole,$datta->desc);
         $result = preg_replace("/{lower_val}/", $diastole ,$result);
 
+        $seo_title=preg_replace("/{upper_val}/", $systole,$datta->meta_title);
+        $seo_title = preg_replace("/{lower_val}/", $diastole ,$seo_title);
+
+
+        $seo_tag=preg_replace("/{upper_val}/", $systole,$datta->meta_tag);
+        $seo_tag = preg_replace("/{lower_val}/", $diastole ,$seo_tag);
+
+        $seo_desc=preg_replace("/{upper_val}/", $systole,$datta->meta_desc);
+        $seo_desc = preg_replace("/{lower_val}/", $diastole ,$seo_desc);
+
+
+
+        $seo_check=1;
         $token=1;
-        return view('front.page',compact('datta','result','token'));
+        return view('front.page',compact('datta','result','token','seo_title','seo_tag','seo_desc','seo_check'));
         }
         else{
           $token=5;

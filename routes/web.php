@@ -161,7 +161,7 @@ Route::get('/articles/', 'Front\FrontendController@Articleid')->name('front.arti
 
 Route::get('/articles/{slug}', 'Front\FrontendController@Article')->name('front.article');
 Route::get('/faq', 'Front\FrontendController@faq')->name('front.faq');
-Route::get('/readings/', 'Front\FrontendController@calculationCheck')->name('front.readings');
+Route::get('/readings/{slug}', 'Front\FrontendController@calculationCheck')->name('front.readings');
 Route::get('/contact/', 'Front\FrontendController@Contact')->name('front.contact');
 Route::post('/contact','Front\FrontendController@contactemail')->name('front.contact.submit');
 
