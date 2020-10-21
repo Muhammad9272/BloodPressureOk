@@ -11,13 +11,13 @@
        @if(isset($seo_check))
         <meta name="keywords" content="{{ !empty($seo_tag) ? $seo_tag:  $gs->meta_keys}}">
         <meta name="description" content="{{ $seo_desc != null ? $seo_desc : '' }}">
-        <title> {{$seo_title}}</title>
+        <title> {{ !empty($seo_title) ? $seo_title:  $gs->title}} </title>
        @elseif(isset($datta->meta_tag) && isset($datta->meta_desc) && isset($datta->meta_title) )
         <meta name="keywords" content="{{ !empty($datta->meta_tag) ? $datta->meta_tag:  $gs->meta_keys}}">
 
         <meta name="description" content="{{ $datta->meta_desc != null ? $datta->meta_desc : '' }}">
         
-        <title> {{$datta->meta_title}} </title>
+        <title> {{ !empty($datta->meta_title) ? $datta->meta_title:  $gs->title}}  </title>
       @else
 
       <meta name="keywords" content="{{ $gs->meta_keys }}">
@@ -440,6 +440,6 @@
 });
 
  </script>
-{!! NoCaptcha::renderJs() !!}
+
   </body>
 </html>
